@@ -12,6 +12,8 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(express.static(`../frontend/dist/frontend`));
+
 // DATABASE
 mongoose.connect(`mongodb://${process.env.IP}:27017/issues`, { useNewUrlParser: true });
 const connection = mongoose.connection;
@@ -19,11 +21,14 @@ connection.once('open', () => {
   console.log('Mongo connection established');
 });
 
+
 // Get all issues
 router.route('/issues').get((req, res) => {
   Issue.find((err, issues) => {
     if (err) console.log(err);
-    else res.json(issues);
+    else {
+      res.json(issues);
+    }
   });
 });
 

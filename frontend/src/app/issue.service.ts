@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class IssueService {
   
-  uri = `http://0.0.0.0:8080`;
-
+  // this would be http://localhost:port on anything but Cloud 9 of course
+  uri = ``;
+  
   constructor(private http:HttpClient) { }
   
   getIssues() {
