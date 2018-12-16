@@ -1,3 +1,27 @@
-<p>
-  create works!
-</p>
+<div>
+  <br />
+  <mat-card>
+    <section class="mat-typography">
+      <h3>Create A New Issue</h3>
+    </section>
+    <mat-divider></mat-divider>
+    <br />
+    <form [formGroup]="createForm" class="create-form">
+      <mat-form-field class="field-full-width">
+        <input type="text" matInput placeholder="Issue title" formControlName="title" #title />
+      </mat-form-field>
+      
+      <mat-form-field class="field-full-width">
+        <input type="text" matInput placeholder="Respagent" formControlName="responsible" #responsible />
+      </mat-form-field>
+      
+      <mat-form-field class="field-full-width">
+        <textarea matInput placeholder="Description" formControlName="description" #description></textarea>
+      </mat-form-field>
+      
+      <mat-form-field class="field-full-width">
+        
+      </mat-form-field>
+    </form>
+  </mat-card>
+</div>
