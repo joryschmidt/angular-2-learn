@@ -29,4 +29,13 @@ export class ListComponent implements OnInit {
     });
   }
 
+  editIssue(id) {
+    this.router.navigate([`/edit/${id}`]);
+  }
+  
+  deleteIssue(id) {
+    this.issueService.deleteIssue(id).subscribe(() => {
+      this.fetchIssues(); 
+    });
+  }
 }

@@ -2,19 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import {  
-  MatToolbarModule, 
-  MatFormFieldModule, 
-  MatInputModule, 
-  MatOptionModule, 
-  MatSelectModule, 
-  MatIconModule, 
-  MatButtonModule, 
-  MatCardModule, 
-  MatTableModule,
-  MatDividerModule,
-  MatSnackBarModule
-} from '@angular/material';
+import { MatToolbarModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,20 +16,10 @@ import { IssueService } from './issue.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MatToolbarModule,
-    MatFormFieldModule, 
-    MatInputModule, 
-    MatOptionModule, 
-    MatSelectModule, 
-    MatIconModule, 
-    MatButtonModule, 
-    MatCardModule, 
-    MatTableModule,
-    MatDividerModule,
-    MatSnackBarModule
+    AppRoutingModule
   ],
   providers: [IssueService],
   bootstrap: [AppComponent]
