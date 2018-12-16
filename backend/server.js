@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
+import path from 'path';
 
 import Issue from './models/Issue';
 
@@ -12,7 +13,7 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use(express.static(`../frontend/dist/frontend`));
+app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist', 'frontend')));
 
 // DATABASE
 mongoose.connect(`mongodb://${process.env.IP}:27017/issues`, { useNewUrlParser: true });
