@@ -72,6 +72,7 @@ router.route('/issues/delete/:id').get((req, res) => {
 });
 
 app.use('/', router);
+app.use('/*', express.static(path.join(path.dirname(__dirname), 'frontend', 'dist', 'frontend')));
 
 const port = 8080;
 app.listen(port, () => console.log(`Express server listening on port ${port}`));
