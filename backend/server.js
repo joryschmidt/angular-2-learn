@@ -58,7 +58,7 @@ router.route('/issues/update/:id').put((req, res, next) => {
       issue.severity = req.body.severity;
       issue.status = req.body.status;
       
-      issue.save().then(issue => res.status(200).send('Update done')).catch(err => res.status(500).send('Update failed'));
+      issue.save().then(issue => res.status(200).json('Update done')).catch(err => res.status(500).send('Update failed'));
     }
   });
 });
